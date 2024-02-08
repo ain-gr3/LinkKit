@@ -8,7 +8,7 @@ public struct _SynchronousLink: Link {
 
     var _links: [any Link]
 
-    init(value: [any Link]) {
+    public init(value: [any Link]) {
         self._links = value
     }
 
