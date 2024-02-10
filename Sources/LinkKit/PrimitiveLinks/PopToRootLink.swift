@@ -9,7 +9,9 @@ public struct PopToRootLink: Link {
     public init() {}
 
     public func start(by viewController: UIViewController) async throws -> UIViewController {
-        guard let navigationController = viewController.navigationController else {
+        let navigationController = viewController.navigationController
+            ?? (viewController as? UINavigationController)
+        guard let navigationController else {
             throw LinkError.navigationNotFound
         }
         let rootController = navigationController.viewControllers.first

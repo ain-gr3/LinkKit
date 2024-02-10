@@ -13,7 +13,8 @@ public struct TabLink: Link {
     }
 
     public func start(by viewController: UIViewController) async throws -> UIViewController {
-        guard let tabBarController = viewController.tabBarController else {
+        let tabBarController = viewController.tabBarController ?? (viewController as? UITabBarController)
+        guard let tabBarController else {
             throw LinkError.tabBarNotFound
         }
         guard let viewControllers = tabBarController.viewControllers, viewControllers.count > index else {
