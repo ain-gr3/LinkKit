@@ -13,8 +13,9 @@ public protocol Link {
     @MainActor func start(by viewController: UIViewController) async throws -> UIViewController
 }
 
-extension Link {
+public extension Link {
 
+    @discardableResult
     @MainActor func start(by viewController: UIViewController) async throws -> UIViewController {
         try await body.start(by: viewController)
     }
