@@ -1,7 +1,4 @@
 //
-//  SceneDelegate.swift
-//  LinkSample
-//
 //  Created by Ain Obara on 2024/02/08.
 //
 
